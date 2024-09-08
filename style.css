@@ -1,0 +1,205 @@
+/* Общие стили для светлой темы */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #F4F4F8; /* Светлый фон */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    transition: background-color 0.5s ease, color 0.5s ease;
+    color: #333; /* Тёмный текст */
+}
+
+/* Темная тема */
+body.dark-mode {
+    background-color: #121212; /* Темный фон */
+    color: #E0E0E0; /* Светлый текст */
+}
+
+/* Контейнеры в тёмной теме */
+body.dark-mode .login-container,
+body.dark-mode .register-container,
+body.dark-mode .profile-container {
+    background-color: #292929; /* Темно-серый контейнер */
+    box-shadow: 0 0 10px rgba(108, 99, 255, 0.3); /* Тень с фиолетовым акцентом */
+}
+
+/* Центрирование и размеры контейнеров */
+.login-container, .register-container, .profile-container {
+    width: 400px;
+    margin: 50px auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    transition: background-color 0.5s ease, box-shadow 0.5s ease;
+}
+
+/* Поля ввода и кнопки в тёмной теме */
+body.dark-mode input, body.dark-mode button {
+    background-color: #292929; /* Темно-серый фон для ввода */
+    color: #E0E0E0; /* Светлый текст */
+    border: 1px solid #6C63FF; /* Границы с фиолетовым акцентом */
+}
+
+/* Поля ввода в светлой теме */
+input, button {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    box-sizing: border-box;
+    transition: all 0.3s ease;
+}
+
+body.dark-mode input, body.dark-mode button {
+    background-color: #292929;
+    color: #E0E0E0;
+    border: 1px solid #6C63FF;
+}
+
+/* Фокус на поле ввода с анимацией */
+input:focus {
+    border-color: #6C63FF;
+    box-shadow: 0 0 8px rgba(108, 99, 255, 0.3);
+    outline: none;
+    transform: scale(1.02); /* Легкое увеличение при клике */
+    transition: transform 0.2s ease-in-out;
+}
+
+/* Стиль для кнопки с более насыщенным фиолетовым */
+button {
+    background-color: #5a52d4; /* Более насыщенный фиолетовый цвет */
+    color: #fff; /* Цвет текста */
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    width: 100%;
+}
+
+/* Стили для кнопки при наведении */
+button:hover {
+    background-color: #7266ff; /* Светлее при наведении, но с насыщенностью */
+    color: #fff; /* Цвет текста при наведении остаётся белым */
+    transform: scale(1.05); /* Лёгкое увеличение при наведении */
+}
+
+
+/* Изначально неактивная кнопка */
+button:disabled {
+    background-color: #ccc; /* Светло-серый цвет для неактивной кнопки */
+    cursor: not-allowed; /* Курсор меняется на запрет */
+    transform: scale(0.95); /* Кнопка уменьшена */
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+/* Активная кнопка (после заполнения полей) */
+button.active {
+    background-color: #6C63FF; /* Основной фиолетовый цвет для активной кнопки */
+    cursor: pointer;
+    transform: scale(1); /* Восстановление исходного размера */
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+/* Ховер эффект на активной кнопке */
+button.active:hover {
+    background-color: #9b94ff; /* Светлый фиолетовый при наведении на активную кнопку */
+    transform: scale(1.05);
+}
+
+
+
+/* Анимация для текста "Hi, Welcome back" */
+h1 {
+    transition: transform 0.6s ease, color 0.6s ease; /* Плавные переходы для анимации */
+}
+
+/* Класс для анимации подпрыгивания */
+h1.bounce {
+    animation: bounce 0.6s ease; /* Длительность 0.6s для более плавной анимации */
+}
+
+/* Анимация "подпрыгивания" текста */
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-15px); /* Подпрыгивание выше */
+    }
+}
+
+/* Цвета для текста */
+h1.color1 {
+    color: #6C63FF; /* Фиолетовый цвет */
+}
+
+h1.color2 {
+    color: #4FD1C5; /* Бирюзовый оттенок */
+}
+
+
+
+
+/* Анимации для переключателя темы */
+.theme-toggle {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
+#theme-switch {
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+#theme-switch:hover {
+    transform: scale(1.2);
+}
+
+#theme-switch:active {
+    transform: scale(0.9);
+}
+
+.icon-moon, .icon-sun {
+    transition: opacity 0.3s ease;
+}
+
+/* Темная тема - переключатель */
+body.dark-mode .icon-moon {
+    display: none;
+}
+
+body.dark-mode .icon-sun {
+    display: inline;
+}
+
+/* Поля ввода, кнопки и контейнеры по умолчанию */
+body {
+    background-color: #F4F4F8; /* Основной светлый фон */
+    color: #333; /* Тёмный текст */
+}
+
+.login-container, .register-container, .profile-container {
+    background-color: #fff;
+    border: none;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Кнопки и поля ввода в светлой теме */
+input, button {
+    background-color: #fff;
+    color: #333;
+    border: 1px solid #ddd;
+}
